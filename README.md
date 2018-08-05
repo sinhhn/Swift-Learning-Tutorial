@@ -5,7 +5,7 @@
 * Select type of connect and something else
 
 
-### make random number
+### Make random number
 
 ```swift
 randomIndex = Int(arc4random_uniform(5))
@@ -18,7 +18,6 @@ When you would to like handle shaking event on physical device. iOS have beed pr
 ```swift
 override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
 	// handle what happen here
-}
-	
+}	
 ```
 	
