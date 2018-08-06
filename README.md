@@ -12,7 +12,7 @@ randomIndex = Int(arc4random_uniform(5))
 ```
 
 ### Shake event handling
-When you would to like handle shaking event on physical device. iOS have beed provided methods that make you can handle this event simply.
+When you would to like handle shaking event on physical device. iOS provides methods that make you can simple handle the events.
 
 	
 ```swift
