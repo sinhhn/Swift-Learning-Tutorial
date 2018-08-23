@@ -21,3 +21,9 @@ override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
 }	
 ```
 	
+### AudioPlayer
+You can create an AudioPlayer for playing sound such as:
+
+```swift
+
+```
