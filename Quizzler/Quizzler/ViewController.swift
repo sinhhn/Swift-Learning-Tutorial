@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     let allQuestions = QuestionBank()
     var pickedAnswer: Bool = false
     var currentQuestion: Int = 0
-    var point: Int = 0
+    var score: Int = 0
     @IBOutlet weak var questionLabel: UILabel!
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet var progressBar: UIView!
@@ -23,12 +23,12 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        questionLabel.text = allQuestions.list[currentQuestion].questionText
+        updateUI()
     }
 
 
     fileprivate func isLastQuestion() -> Bool {
-        return currentQuestion < allQuestions.list.count - 1
+        return currentQuestion >= allQuestions.list.count - 1
     }
 
     @IBAction func answerPressed(_ sender: AnyObject) {
@@ -39,7 +39,7 @@ class ViewController: UIViewController {
             pickedAnswer = false
         }
         checkAnswer()
-        if isLastQuestion() {
+        if !isLastQuestion() {
             nextQuestion()
         }
         else {
@@ -54,8 +54,11 @@ class ViewController: UIViewController {
 
 
     func updateUI() {
-        progressLabel.text = String(point)
+        // scoreLabel.text = String(score)
+        scoreLabel.text = "Score: \(score)"
+        progressLabel.text = "\(currentQuestion + 1) / 13"
         questionLabel.text = allQuestions.list[currentQuestion].questionText
+        progressBar.frame.size.width = (view.frame.size.width / 13) * CGFloat(currentQuestion + 1)
     }
 
 
@@ -66,19 +69,17 @@ class ViewController: UIViewController {
 
 
     func checkAnswer() {
-        if pickedAnswer == allQuestions.list[currentQuestion].answer {
-            point += 1
+        let correctAnswer = allQuestions.list[currentQuestion].answer
+        if correctAnswer == pickedAnswer {
+            score += 1
         }
     }
 
 
     func startOver() {
         currentQuestion = 0
-        point = 0
+        score = 0
         pickedAnswer = false
         updateUI()
     }
-
-
-
 }
