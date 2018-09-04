@@ -130,7 +130,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 1000;
-				ORGANIZATIONNAME = "London App Brewery";
+				ORGANIZATIONNAME = Vnguider;
 				TargetAttributes = {
 					633646B81B8C657400FF45E2 = {
 						CreatedOnToolsVersion = 6.4;
